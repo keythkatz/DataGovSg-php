@@ -30,6 +30,9 @@ abstract class Dataset
 
         $guzzle = new \GuzzleHttp\Client();
         $response = $guzzle->request("GET", $url);
-        echo ($response->getBody());
+        $obj = json_decode((string) $response->getBody());
+        foreach ($obj as $key => $value) {
+            $this->$key = $value;
+        }
     }
 }
