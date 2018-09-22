@@ -29,6 +29,11 @@ To implement your own dataset, see [Implementing your own Dataset](#implementing
 
 [Dataset](https://data.gov.sg/dataset/psi)
 
+#### Parameters
+If ``$date`` is null, no parameters will be used, The API will return the latest readings.
+
+If ``$useTime`` is false, the ``date`` field in the API will be used and the time provided will be ignored. Otherwise, ``date_time`` is used.
+
 #### Helper Methods
 Each reading available in the dataset is implemented in camelCase. For example, the data ``so2_twenty_four_hourly`` is available as ``$psi->getSo2TwentyFourHourly($region)``, where ``$region`` is in ``["national", "north", "south", "east", "west", "central"]``. If there are multiple timings provided, the first one will be returned.
 
@@ -36,6 +41,11 @@ Each reading available in the dataset is implemented in camelCase. For example, 
 ``getPm25(\DateTime $date = null, bool $useTime = false)``
 
 [Dataset](https://data.gov.sg/dataset/pm2-5)
+
+#### Parameters
+If ``$date`` is null, no parameters will be used, The API will return the latest readings.
+
+If ``$useTime`` is false, the ``date`` field in the API will be used and the time provided will be ignored. Otherwise, ``date_time`` is used.
 
 #### Helper Methods
 Each reading available in the dataset is implemented in camelCase. For example, the data ``pm_25`` is available as ``$pm25->getPm25($region)``, where ``$region`` is in ``["north", "south", "east", "west", "central"]``. If there are multiple timings provided, the first one will be returned.
