@@ -3,6 +3,10 @@ declare (strict_types = 1);
 
 namespace KeythKatz\DataGovSg\Dataset;
 
+/**
+ * PSI Dataset.
+ * https://data.gov.sg/dataset/psi
+ */
 class Psi extends Dataset
 {
 
