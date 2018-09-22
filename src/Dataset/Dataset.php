@@ -31,19 +31,8 @@ abstract class Dataset
     protected function populateData()
     {
         $url = \KeythKatz\DataGovSg\DataGovSg::API_URL . static::$path . "?";
-        $first = true;
-        foreach ($this->parameters as $name => $data) {
-            if ($first) {
-                $first = false;
-            } else {
-                $url .= "&";
-            }
-
-            $url .= $name . "=" . $data;
-        }
-
         $guzzle = new \GuzzleHttp\Client();
-        $response = $guzzle->request("GET", $url);
+        $response = $guzzle->request("GET", $url, ["query" => $this->parameters]);
         $obj = json_decode((string) $response->getBody());
         foreach ($obj as $key => $value) {
             $this->$key = $value;

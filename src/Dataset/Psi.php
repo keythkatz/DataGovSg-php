@@ -17,7 +17,7 @@ class Psi extends Dataset
                 $dateString = $date->format("Y-m-d");
                 $this->addParameter("date", $dateString);
             } else {
-                $dateString = $date->format("r");
+                $dateString = $date->format("c");
                 $this->addParameter("date_time", $dateString);
             }
         }
@@ -40,6 +40,7 @@ class Psi extends Dataset
     public function getO3SubIndex(string $region): int
     {
         $this->validateRegion($region);
+        $region = strtolower($region);
 
         return $this->items[0]->readings->o3_sub_index->$region;
     }
