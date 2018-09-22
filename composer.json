@@ -21,7 +21,12 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"KeythKatz\\DataGovSg\\": "src/"
+			"KeythKatz\\DataGovSg\\": "src/",
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"KeythKatz\\DataGovSg\\Test": "tests/"
 		}
 	}
 }
