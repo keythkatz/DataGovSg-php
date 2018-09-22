@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/keythkatz/DataGovSg-php.svg?branch=master)](https://travis-ci.com/keythkatz/DataGovSg-php)
+
 # DataGovSg-php
 Composer package for data.gov.sg
 
